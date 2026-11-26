@@ -91,6 +91,62 @@
 4. **Deploy**:
    - Connect an Android device or start an Emulator (API 26+) and click **Run**.
 
+<h1 align="center">Hi 👋, I'm Ritik Kumar</h1>
+<h3 align="center">🚀 Passionate Android Developer & AI / Cybersecurity Enthusiast</h3>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Ritik2006kumar&color=ff2d55&style=flat-square" alt="Profile Views" />
+  <img src="https://img.shields.io/badge/GitHub-Followers-blue?style=flat-square&logo=github" alt="Followers" />
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin" alt="LinkedIn" />
+</p>
+
+---
+
+### 👨‍💻 About Me
+- 🌱 I’m currently exploring **Advanced Android Architecture, Jetpack Compose, and AI-powered Mobile Agents**.
+- 💡 Creator of **VoxPilot / MYRA** — Next-Gen AI Android Assistant & Cyber Security Suite.
+- 🎯 My goal is to build secure, lightning-fast, and high-performance mobile applications with stunning cyberpunk UI/UX.
+
+---
+
+### 🛠️ Tech Stack & Skills
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" />
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/Security-AES--256-00E5FF?style=for-the-badge&logo=security&logoColor=white" />
+</p>
+
+---
+
+### 🌟 Featured Project: VoxPilot / MYRA
+> **Next-Gen AI Android Assistant & Cyber Security Suite**
+- 🛡️ **Quantum Core HUD Dashboard**: Real-time telemetry (RAM, Storage, Battery remaining estimation, Wi-Fi signal & 4G/5G carrier detector).
+- 📷 **Payment & Wi-Fi QR Code Scanner**: Powered by CameraX & ML Kit Barcode Scanning with UPI intelligence.
+- 🔐 **Secure Encrypted Vault**: AES-256 encrypted notes and media vault protected by Biometrics/PIN, `FLAG_SECURE` screenshot blocker, and **Intruder Selfie Capture** on wrong PIN attempts.
+- 🌐 **Network & Phishing Defense**: Real-time VPN tunnel inspection and URL scam protection.
+
+🔗 **[Check out the repository here](https://github.com/Ritik2006kumar/MAX)**
+
+---
+
+### 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Ritik2006kumar&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Ritik2006kumar&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+</p>
+
+---
+
+### 📫 Connect With Me
+- 💼 **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
+- 🐦 **Twitter / X**: [@YourTwitter](https://twitter.com/your-profile)
+- 📧 **Email**: your.email@example.com
+
 ---
 
 ## 📄 License
