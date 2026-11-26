@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="dev.voxpilot.assistant">
+
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="35"/>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent>
+    </queries>
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/img"
+        android:label="Max"
+        android:roundIcon="@mipmap/img"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VoxPilot"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <!-- MAIN ACTIVITY -->
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ASSIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <!-- APP LOCK -->
+        <activity
+            android:name=".security.AppLockActivity"
+            android:exported="false"
+            android:theme="@style/Theme.VoxPilot.Transparent"/>
+
+        <!-- TOUCH GUARD -->
+        <activity
+            android:name=".security.TouchGuardActivity"
+            android:exported="false"/>
+
+        <!-- MOTION GUARD -->
+        <activity
+            android:name=".security.MotionGuardActivity"
+            android:exported="false"/>
+
+        <!-- FIND MY PHONE -->
+        <activity
+            android:name=".security.FindMyPhoneActivity"
+            android:exported="false"/>
+
+        <!-- FAKE CALL -->
+        <activity
+            android:name=".ui.main.FakeCallActivity"
+            android:exported="false"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true"/>
+
+        <!-- VISION ANALYSIS -->
+        <activity
+            android:name=".ui.main.VisionAnalysisActivity"
+            android:exported="false"/>
+
+        <!-- INSTALLED APPS LIST -->
+        <activity
+            android:name=".ui.settings.InstalledAppsActivity"
+            android:exported="false"/>
+
+        <!-- PERMISSION ANALYZER -->
+        <activity
+            android:name=".security.PermissionAnalyzerActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".security.PermissionDetailActivity"
+            android:exported="false"/>
+
+        <!-- NETWORK SECURITY ACTIVITY -->
+        <activity
+            android:name=".security.NetworkSecurityActivity"
+            android:exported="false"/>
+
+        <!-- PHISHING & SCAM DETECTION CENTER -->
+        <activity
+            android:name=".security.PhishingDetectorActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".security.PhishingReportDetailActivity"
+            android:exported="false"/>
+
+        <!-- QR CODE SAFETY SCANNER -->
+        <activity
+            android:name=".security.QrScannerActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".security.QrReportDetailActivity"
+            android:exported="false"/>
+
+        <!-- QUANTUM CORE DASHBOARD -->
+        <activity
+            android:name=".security.QuantumDashboardActivity"
+            android:exported="false"/>
+
+        <!-- LOCAL APK & MALWARE SCANNER -->
+        <activity
+            android:name=".security.ApkScannerActivity"
+            android:exported="false"/>
+
+        <!-- ACTIVE ENDPOINT MONITOR -->
+        <activity
+            android:name=".security.ConnectionEndpointActivity"
+            android:exported="false"/>
+
+        <!-- SECURE ENCRYPTED VAULT -->
+        <activity
+            android:name=".security.SecureVaultActivity"
+            android:exported="false"/>
+
+        <!-- BATTERY & CPU DRAIN INSPECTOR -->
+        <activity
+            android:name=".security.BatteryDrainActivity"
+            android:exported="false"/>
+
+        <!-- SMS PHISHING GUARD -->
+        <activity
+            android:name=".security.PhishingGuardActivity"
+            android:exported="false"/>
+
+        <!-- FILE PROVIDER -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="dev.voxpilot.assistant.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- APP ICON CUSTOMIZER -->
+        <activity
+            android:name=".ui.settings.AppIconCustomizerActivity"
+            android:exported="false"/>
+
+        <!-- BATTERY ALERTS RECEIVER -->
+        <receiver
+            android:name=".service.BatteryAlertReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- REMINDER RECEIVER -->
+        <receiver
+            android:name=".reminder.ReminderReceiver"
+            android:exported="false"/>
+
+        <!-- MESSAGE RECEIVER -->
+        <receiver
+            android:name=".reminder.MessageReceiver"
+            android:exported="false"/>
+
+        <!-- SETTINGS -->
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false"/>
+
+        <!-- SECURITY SETTINGS -->
+        <activity
+            android:name=".security.SecuritySettingsActivity"
+            android:exported="false"/>
+
+        <!-- PATTERN SETUP -->
+        <activity
+            android:name=".security.PatternSetupActivity"
+            android:exported="false"/>
+
+        <!-- APP SELECTION -->
+        <activity
+            android:name=".security.AppSelectionActivity"
+            android:exported="false"/>
+
+        <!-- CALL ASSISTANT -->
+        <activity
+            android:name=".ui.main.CallAssistantActivity"
+            android:exported="false"
+            android:theme="@style/Theme.VoxPilot.Transparent"/>
+
+        <!-- ACCESSIBILITY SERVICE -->
+        <service
+            android:name=".service.AccessibilityHelperService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config"/>
+        </service>
+
+        <!-- FOREGROUND VOICE SERVICE (Always Listening) -->
+        <service
+            android:name=".services.ForegroundVoiceService"
+            android:exported="false"
+            android:foregroundServiceType="microphone"/>
+
+        <!-- CALL MONITOR -->
+        <service
+            android:name=".service.CallMonitorService"
+            android:exported="false"
+            android:foregroundServiceType="phoneCall"/>
+
+        <!-- OVERLAY SERVICE -->
+        <service
+            android:name=".service.VoxPilotOverlayService"
+            android:exported="false"
+            android:foregroundServiceType="microphone"/>
+
+        <!-- DEVICE ADMIN -->
+        <receiver
+            android:name=".service.VoxPilotDeviceAdminReceiver"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_receiver"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- ALARMS (set in the background, no Clock app) -->
+        <receiver
+            android:name=".alarm.AlarmReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".alarm.AlarmRingService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback"/>
+
+        <activity
+            android:name=".alarm.AlarmRingActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:showOnLockScreen="true"
+            android:screenOrientation="portrait"/>
+
+        <!-- BOOT RECEIVER -->
+        <receiver
+            android:name=".service.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- POWER BUTTON RECEIVER -->
+        <receiver
+            android:name=".service.PowerButtonReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF"/>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

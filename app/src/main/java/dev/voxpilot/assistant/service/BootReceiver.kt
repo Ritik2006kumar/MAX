@@ -1,0 +1,20 @@
+package dev.voxpilot.assistant.service
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import androidx.core.content.ContextCompat
+import dev.voxpilot.assistant.services.ForegroundVoiceService
+import dev.voxpilot.assistant.utils.Constants
+
+class BootReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
+            val prefs = context.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE)
+            val apiKey = prefs.getString(Constants.KEY_API_KEY, "") ?: ""
+            if (apiKey.isNotEmpty()) {
+                ContextCompat.startForegroundService(context, Intent(context, ForegroundVoiceService::class.java))
+            }
+        }
+    }
+}

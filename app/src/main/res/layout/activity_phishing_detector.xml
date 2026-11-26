@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080508"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_icon_btn"
+            android:src="@drawable/ic_back"
+            app:tint="#FF2D55"
+            android:padding="12dp"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:fontFamily="sans-serif-bold"
+            android:text="Phishing &amp; Scam Center"
+            android:textColor="#FF2D55"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- Input Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PASTE SUSPICIOUS LINK"
+                    android:textColor="#888899"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/urlInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_score_bar"
+                    android:backgroundTint="#080508"
+                    android:hint="https://example.com/login..."
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#444466"
+                    android:inputType="textUri"
+                    android:autofillHints="url"
+                    android:padding="14dp"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/pasteBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#1A1A2E"
+                        android:text="Paste"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginEnd="8dp" />
+
+                    <Button
+                        android:id="@+id/clearBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#1A1A2E"
+                        android:text="Clear"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginEnd="8dp" />
+
+                    <Button
+                        android:id="@+id/scanBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FF2D55"
+                        android:text="Scan URL"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- History Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Recent Scan History"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:id="@+id/clearHistoryBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear All"
+                    android:textColor="#FF2D55"
+                    android:textSize="13sp"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/emptyHistoryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No recent scan records found."
+                android:textColor="#888899"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/historyListView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:divider="#1A1A2E"
+                android:dividerHeight="1dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

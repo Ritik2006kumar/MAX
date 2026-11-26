@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080508"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <!-- Top Navigation Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_icon_btn"
+            android:src="@drawable/ic_back"
+            app:tint="#FF2D55"
+            android:padding="12dp"
+            android:contentDescription="Back" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_shield"
+                    app:tint="#FF2D55"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="MYRA"
+                    android:textColor="#FF2D55"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:shadowColor="#FF2D55"
+                    android:shadowRadius="10" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QR Scanner"
+                android:textColor="#888899"
+                android:textSize="11sp"
+                android:letterSpacing="0.15" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/settingsBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_icon_btn"
+            android:src="@drawable/ic_settings"
+            app:tint="#FF2D55"
+            android:padding="12dp"
+            android:contentDescription="Settings" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- Scan Result Top Header Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="14dp">
+
+                <ImageView
+                    android:id="@+id/qrPreviewImage"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:src="@drawable/ic_sparkle"
+                    app:tint="#FF2D55"
+                    android:background="#080508"
+                    android:padding="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="QR Code Preview" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/categoryPillBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wi-Fi QR Code"
+                        android:textColor="#FF2D55"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:background="@drawable/bg_score_bar"
+                        android:backgroundTint="#1A1A2E"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:layout_marginBottom="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scan Result"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <TextView
+                        android:id="@+id/safetyProceedText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✓ Safe to Connect"
+                        android:textColor="#3DDC84"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:id="@+id/threatStatusSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No major threat detected"
+                        android:textColor="#888899"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Dynamic Category Details Card (Network Details / Payment Details) -->
+            <LinearLayout
+                android:id="@+id/categoryDetailsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_shield"
+                        app:tint="#FF2D55"
+                        android:importantForAccessibility="no" />
+
+                    <TextView
+                        android:id="@+id/categoryDetailsTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="Network Details"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <TextView
+                        android:id="@+id/providerBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✓ Secure Network"
+                        android:textColor="#3DDC84"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:background="@drawable/bg_score_bar"
+                        android:backgroundTint="#143B29"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/categoryDetailsList" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+            </LinearLayout>
+
+            <!-- Security Analysis Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_shield"
+                        app:tint="#FF2D55"
+                        android:importantForAccessibility="no" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:text="Security Analysis"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <TextView
+                        android:id="@+id/securityRiskBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LOW RISK"
+                        android:textColor="#3DDC84"
+                        android:textSize="11sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:background="@drawable/bg_score_bar"
+                        android:backgroundTint="#143B29"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/securityAnalysisList" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" />
+            </LinearLayout>
+
+            <!-- Smart Actions Grid (4 Buttons) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smart Actions"
+                android:textColor="#FF2D55"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-bold"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="14dp">
+
+                <Button
+                    android:id="@+id/btnConnectWifi"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#1A1A2E"
+                    android:text="Connect to Wi-Fi"
+                    android:textColor="#FF2D55"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginEnd="4dp" />
+
+                <Button
+                    android:id="@+id/btnCopyDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#1A1A2E"
+                    android:text="Copy Info"
+                    android:textColor="#FF2D55"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginEnd="4dp" />
+
+                <Button
+                    android:id="@+id/btnShare"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#1A1A2E"
+                    android:text="Share"
+                    android:textColor="#FF2D55"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginEnd="4dp" />
+
+                <Button
+                    android:id="@+id/btnSecurityReport"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#1A1A2E"
+                    android:text="View Details"
+                    android:textColor="#FF2D55"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+
+            <!-- Bottom Safety Tip Banner -->
+            <LinearLayout
+                android:id="@+id/safetyWarningCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_sparkle"
+                    app:tint="#FF2D55"
+                    android:importantForAccessibility="no"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/warningSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tip: Make sure this Wi-Fi network is trusted before connecting."
+                    android:textColor="#888899"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Bottom Big Action Button -->
+            <Button
+                android:id="@+id/btnMainAction"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:backgroundTint="#FF2D55"
+                android:text="Open Payment App"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-bold"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

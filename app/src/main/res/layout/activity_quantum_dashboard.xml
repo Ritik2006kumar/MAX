@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080508"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Header & Assistant Greeting -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- Left: Assistant Logo & Subtitle -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_sparkle"
+                            app:tint="#FF2D55"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            android:id="@+id/dashboardAssistantName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="sans-serif-bold"
+                            android:text="MAX"
+                            android:textColor="#FF2D55"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.06"
+                            android:shadowColor="#FF2D55"
+                            android:shadowRadius="14" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your Personal AI Assistant"
+                        android:textColor="#B8B8C0"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.2"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Right: Greeting Card -->
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chat_panel"
+                    android:backgroundTint="#111124"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_sparkle"
+                            app:tint="#FF2D55"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            android:id="@+id/dashboardGreetingText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Hello Sir!"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How can I help you?"
+                        android:textColor="#888899"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Character & Battery Status Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- Left: Character Avatar Frame -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chat_panel"
+                    android:backgroundTint="#0D0D1A"
+                    android:padding="4dp"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/voxpilot_girl"
+                        android:contentDescription="AI Assistant" />
+                </FrameLayout>
+
+                <!-- Right: Circular Battery Gauge Card -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chat_panel"
+                    android:backgroundTint="#0D0D1A"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/batteryPercentText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="78%"
+                        android:textColor="#FF2D55"
+                        android:textSize="36sp"
+                        android:fontFamily="sans-serif-black"
+                        android:shadowColor="#FF2D55"
+                        android:shadowRadius="10" />
+
+                    <TextView
+                        android:id="@+id/batteryStatusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚡ Active"
+                        android:textColor="#3DDC84"
+                        android:textSize="13sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:id="@+id/batteryTimeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="≈ 1h 20m Left"
+                        android:textColor="#888899"
+                        android:textSize="11sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row: RAM & Storage Cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <!-- RAM Card -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chat_panel"
+                    android:backgroundTint="#0D0D1A"
+                    android:orientation="vertical"
+                    android:padding="14dp"
+                    android:layout_marginEnd="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="RAM Usage"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <TextView
+                            android:id="@+id/ramPercentText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="62%"
+                            android:textColor="#FF2D55"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold" />
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/ramProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:progress="62"
+                        android:progressDrawable="@drawable/bg_score_bar"
+                        android:layout_marginBottom="6dp" />
+
+                    <TextView
+                        android:id="@+id/ramDetailText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3.8 GB / 6 GB"
+                        android:textColor="#888899"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Storage Card -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chat_panel"
+                    android:backgroundTint="#0D0D1A"
+                    android:orientation="vertical"
+                    android:padding="14dp"
+                    android:layout_marginStart="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Storage"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <TextView
+                            android:id="@+id/storagePercentText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="72%"
+                            android:textColor="#FF2D55"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-bold" />
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/storageProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:progress="72"
+                        android:progressDrawable="@drawable/bg_score_bar"
+                        android:layout_marginBottom="6dp" />
+
+                    <TextView
+                        android:id="@+id/storageDetailText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="92.4 GB / 128 GB"
+                        android:textColor="#888899"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row: Wi-Fi & Mobile Network Cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <!-- Wi-Fi Card -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chat_panel"
+                    android:backgroundTint="#0D0D1A"
+                    android:orientation="vertical"
+                    android:padding="14dp"
+                    android:layout_marginEnd="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Wi-Fi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@drawable/bg_score_bar"
+                            android:backgroundTint="#3DDC84" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Connected"
+                        android:textColor="#3DDC84"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-bold" />
+
+                    <TextView
+                        android:id="@+id/wifiSsidText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MyHome_WiFi"
+                        android:textColor="#888899"
+                        android:textSize="11sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <!-- Mobile Network Card -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_chat_panel"
+                    android:backgroundTint="#0D0D1A"
+                    android:orientation="vertical"
+                    android:padding="14dp"
+                    android:layout_marginStart="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mobile Network"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13sp"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <TextView
+                            android:id="@+id/mobileNetworkGenBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4G"
+                            android:textColor="#FF2D55"
+                            android:textSize="10sp"
+                            android:background="@drawable/bg_score_bar"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp"
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/mobileCarrierText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jio 4G"
+                        android:textColor="#FF2D55"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-bold"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Security Tools Command Center Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SECURITY COMMAND CENTER"
+                android:textColor="#888899"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/cardInstalledApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_sparkle" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Installed Apps Explorer" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Browse all installed apps and launch them" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardApkScanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_shield" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Local APK &amp; Malware Scanner" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Scan installed apps and storage APKs for risks" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardConnectionEndpoints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_sparkle" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Active Endpoint Monitor" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monitor active local IP and network endpoints" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardSecureVault"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_shield" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Secure Encrypted Vault" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="AES-256 private notes &amp; password vault" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardBatteryDrain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_sparkle" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Battery &amp; CPU Drain Inspector" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monitor background resource and battery drain" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardPhishingGuard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_shield" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SMS &amp; Notification Phishing Guard" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monitor incoming messages for scam links" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardPermissionAnalyzer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_shield" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Smart App Permission Analyzer" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Audit installed apps and risk levels" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardNetworkSecurity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_sparkle" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Network Security &amp; Insights" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Check VPN tunnel, Wi-Fi and internet" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardPhishing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_shield" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phishing &amp; Scam Detection Center" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Analyze links and lookalike domains" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardQrScanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chat_panel"
+                android:backgroundTint="#0D0D1A"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/ic_sparkle" app:tint="#FF2D55" android:importantForAccessibility="no" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:orientation="vertical">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="QR Code Safety Scanner" android:textColor="#FFFFFF" android:textSize="14sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Scan QR codes safely with real-time checks" android:textColor="#888899" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Cyberpunk Dock Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="#0D0D1A"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <ImageButton
+            android:id="@+id/dockAppGridBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_btn"
+            android:src="@drawable/ic_menu"
+            app:tint="#FF2D55"
+            android:padding="12dp"
+            android:contentDescription="App Grid" />
+
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
+        <!-- Center Glowing Mic Orb Button -->
+        <FrameLayout
+            android:id="@+id/dockMicOrbBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_send_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="8dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_sparkle"
+                app:tint="#FFFFFF"
+                android:importantForAccessibility="no" />
+        </FrameLayout>
+
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/dockSettingsBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_btn"
+            android:src="@drawable/ic_settings"
+            app:tint="#FF2D55"
+            android:padding="12dp"
+            android:contentDescription="Settings" />
+    </LinearLayout>
+
+</LinearLayout>

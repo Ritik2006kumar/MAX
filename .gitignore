@@ -1,0 +1,25 @@
+# Gradle / Android
+.gradle/
+build/
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+*.ap_
+*.dex
+local.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.kotlin/
+
+# Secrets and signing - never commit these
+keystore.properties
+*.jks
+*.keystore
+google-services.json
+*.pem
+.env

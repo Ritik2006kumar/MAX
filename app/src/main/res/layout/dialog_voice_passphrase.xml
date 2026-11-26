@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/recordStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type a secret phrase, or tap the mic and say it (3+ words works best)."
+        android:textSize="14sp"
+        android:layout_marginBottom="14dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/passphraseInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Secret phrase"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"/>
+
+        <ImageButton
+            android:id="@+id/recordPassphraseBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_icon_btn"
+            android:contentDescription="Say it"
+            android:padding="12dp"
+            android:src="@drawable/ic_mic_on"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/passphrasePreviewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text=""
+        android:textStyle="italic"
+        android:visibility="gone"/>
+</LinearLayout>

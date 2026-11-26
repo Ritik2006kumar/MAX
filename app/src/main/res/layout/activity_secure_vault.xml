@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080508"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_icon_btn"
+            android:src="@drawable/ic_back"
+            app:tint="#FF2D55"
+            android:padding="12dp"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:fontFamily="sans-serif-bold"
+            android:text="Secure Encrypted Vault"
+            android:textColor="#FF2D55"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/addNoteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:backgroundTint="#FF2D55"
+            android:text="+Note"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-bold"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/addMediaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:backgroundTint="#0C2540"
+            android:text="+Media"
+            android:textColor="#00E5FF"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-bold"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/intrudersBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:backgroundTint="#33FF6B6B"
+            android:text="Intruders"
+            android:textColor="#FF6B6B"
+            android:textSize="10sp"
+            android:fontFamily="sans-serif-bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Vault is empty. Add encrypted notes or private photos/videos."
+        android:textColor="#888899"
+        android:textSize="14sp"
+        android:layout_marginTop="40dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/vaultListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#1A1A2E"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080508"
+    android:fitsSystemWindows="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/backBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_icon_btn"
+                android:contentDescription="Back"
+                android:padding="13dp"
+                android:src="@drawable/ic_back" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Privacy &amp; Security"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lock VoxPilot and your apps"
+                    android:textColor="#9A9AA6"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Protection score -->
+        <LinearLayout
+            style="@style/SettingsCard"
+            android:layout_marginTop="22dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_shield"
+                    android:importantForAccessibility="no" />
+
+                <TextView
+                    android:id="@+id/scoreTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Protection: Weak"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/scoreValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="0%"
+                    android:textColor="#FF5C7C"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/scoreBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="14dp"
+                android:max="100"
+                android:progressDrawable="@drawable/bg_score_bar" />
+
+            <TextView
+                android:id="@+id/scoreHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Turn on App Lock to protect VoxPilot"
+                android:textColor="#8E8E9A"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- App lock -->
+        <TextView style="@style/SettingsSection" android:text="APP LOCK" />
+
+        <LinearLayout style="@style/SettingsCard">
+
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Enable App Lock" />
+                    <TextView
+                        android:id="@+id/appLockStatusText"
+                        style="@style/SettingsRowSub"
+                        android:text="App Lock is off" />
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/appLockSwitch"
+                    style="@style/SettingsSwitch" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/selectAppsBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Apps to lock" />
+                    <TextView
+                        android:id="@+id/lockedAppsText"
+                        style="@style/SettingsRowSub"
+                        android:text="Choose which apps need VoxPilot's lock" />
+                </LinearLayout>
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Unlock methods -->
+        <TextView style="@style/SettingsSection" android:text="UNLOCK METHODS" />
+
+        <LinearLayout style="@style/SettingsCard">
+
+            <LinearLayout
+                android:id="@+id/setPinBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="PIN" />
+                    <TextView style="@style/SettingsRowSub" android:text="4-digit code" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/pinStatusText"
+                    style="@style/SettingsStatus" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setPatternBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Pattern" />
+                    <TextView style="@style/SettingsRowSub" android:text="Draw to unlock" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/patternStatusText"
+                    style="@style/SettingsStatus" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setVoiceBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Voice passphrase" />
+                    <TextView style="@style/SettingsRowSub" android:text="Say a secret phrase to unlock" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/voiceStatusText"
+                    style="@style/SettingsStatus" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout
+                android:id="@+id/rowFingerprint"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Fingerprint unlock" />
+                    <TextView style="@style/SettingsRowSub" android:text="Use your fingerprint or face" />
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/fingerprintSwitch"
+                    style="@style/SettingsSwitch" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Phone screen lock" />
+                    <TextView style="@style/SettingsRowSub" android:text="Allow your phone's PIN / password" />
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/deviceLockSwitch"
+                    style="@style/SettingsSwitch" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Permissions -->
+        <TextView style="@style/SettingsSection" android:text="PERMISSIONS FOR APP LOCK" />
+
+        <LinearLayout style="@style/SettingsCard">
+
+            <LinearLayout
+                android:id="@+id/usageStatsBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Usage access" />
+                    <TextView style="@style/SettingsRowSub" android:text="Detect when a locked app opens" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/usageStatus"
+                    style="@style/SettingsStatus" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/overlayPermissionBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Display over other apps" />
+                    <TextView style="@style/SettingsRowSub" android:text="Show the lock screen on top" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/overlayStatus"
+                    style="@style/SettingsStatus" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout
+                android:id="@+id/permissionAnalyzerBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Smart App Permission Analyzer" />
+                    <TextView style="@style/SettingsRowSub" android:text="Inspect app permissions, risk levels &amp; settings" />
+                </LinearLayout>
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout
+                android:id="@+id/networkSecurityBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Network Security &amp; Insights" />
+                    <TextView style="@style/SettingsRowSub" android:text="Check connection type, VPN, internet &amp; security" />
+                </LinearLayout>
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout
+                android:id="@+id/phishingDetectorBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Phishing &amp; Scam Detection Center" />
+                    <TextView style="@style/SettingsRowSub" android:text="Analyze suspicious links, domains &amp; URL patterns" />
+                </LinearLayout>
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout
+                android:id="@+id/qrScannerBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="QR Code Safety Scanner" />
+                    <TextView style="@style/SettingsRowSub" android:text="Scan QR codes safely with real-time risk checks" />
+                </LinearLayout>
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <LinearLayout
+                android:id="@+id/quantumDashboardBtn"
+                style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Quantum Core Dashboard (Sci-Fi HUD)" />
+                    <TextView style="@style/SettingsRowSub" android:text="Switch home UI to high-tech system status HUD" />
+                </LinearLayout>
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Privacy -->
+        <TextView style="@style/SettingsSection" android:text="PRIVACY" />
+
+        <LinearLayout style="@style/SettingsCard">
+
+            <LinearLayout style="@style/SettingsRow">
+                <LinearLayout style="@style/SettingsRowText">
+                    <TextView style="@style/SettingsRowTitle" android:text="Private mode" />
+                    <TextView
+                        android:id="@+id/privateModeStatusText"
+                        style="@style/SettingsRowSub"
+                        android:text="Hide chat history" />
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/privateModeSwitch"
+                    style="@style/SettingsSwitch" />
+            </LinearLayout>
+
+            <View style="@style/SettingsDivider" />
+
+            <TextView
+                android:id="@+id/encryptionStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:text="AES-256-GCM (Android Keystore) - always on"
+                android:textColor="#3DDC84"
+                android:textSize="12.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

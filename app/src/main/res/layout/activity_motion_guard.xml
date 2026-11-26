@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A060A"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_voxpilot_notif"
+        android:contentDescription="Motion Shield" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Motion Guard Active 🚨"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/statusMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Phone is protected. If anyone moves or lifts your phone, a loud alarm will sound!"
+        android:textColor="#9A9AA6"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/disarmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#3DDC84"
+        android:text="Disarm / Stop"
+        android:textColor="#080508"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

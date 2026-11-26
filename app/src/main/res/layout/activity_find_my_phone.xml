@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A060A"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/ic_voxpilot_notif"
+        android:contentDescription="Find My Phone" />
+
+    <TextView
+        android:id="@+id/findTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Main Yahan Hoon! 📍"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/findSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Phone is flashing flashlight and ringing at max volume!"
+        android:textColor="#9A9AA6"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/stopFindBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#3DDC84"
+        android:text="I Found My Phone 🎉"
+        android:textColor="#080508"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

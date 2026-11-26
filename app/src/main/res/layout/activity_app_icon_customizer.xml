@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080508"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:scrollbars="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Aesthetic App Icon Studio"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose custom aesthetic icon themes for your app drawer"
+        android:textColor="#B8B8C0"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Midnight Dark Aesthetic -->
+            <LinearLayout style="@style/SettingsCard" android:orientation="vertical" android:padding="16dp" android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:text="🖤 Midnight Dark Aesthetic" android:textColor="#FFFFFF" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Sleek dark minimal icons with clean white borders" android:textColor="#AAAAAA" android:textSize="13sp"/>
+                <Button android:id="@+id/applyMidnightBtn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:backgroundTint="#2C2C2E" android:text="Apply Midnight Dark" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Neon Pink Glow -->
+            <LinearLayout style="@style/SettingsCard" android:orientation="vertical" android:padding="16dp" android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:text="💖 Neon Pink Glow" android:textColor="#FF2D55" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Vibrant neon pink aura and glowing outlines" android:textColor="#AAAAAA" android:textSize="13sp"/>
+                <Button android:id="@+id/applyNeonPinkBtn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:backgroundTint="#FF2D55" android:text="Apply Neon Pink" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Glassmorphism -->
+            <LinearLayout style="@style/SettingsCard" android:orientation="vertical" android:padding="16dp" android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:text="🪞 Glassmorphism Frosted" android:textColor="#00FFFF" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Translucent frosted glass aesthetic styling" android:textColor="#AAAAAA" android:textSize="13sp"/>
+                <Button android:id="@+id/applyGlassBtn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:backgroundTint="#3A3A3C" android:text="Apply Glassmorphism" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Gold Foil Luxury -->
+            <LinearLayout style="@style/SettingsCard" android:orientation="vertical" android:padding="16dp" android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:text="👑 Gold Foil Luxury" android:textColor="#FFD700" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Premium gold metallic aura and luxury styling" android:textColor="#AAAAAA" android:textSize="13sp"/>
+                <Button android:id="@+id/applyGoldFoilBtn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:backgroundTint="#D4AF37" android:text="Apply Gold Foil" android:textColor="#000000"/>
+            </LinearLayout>
+
+            <!-- Hacker Matrix -->
+            <LinearLayout style="@style/SettingsCard" android:orientation="vertical" android:padding="16dp" android:layout_marginBottom="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:text="💻 Hacker Matrix Theme" android:textColor="#00FF00" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Terminal green cyber-security hacker styling" android:textColor="#AAAAAA" android:textSize="13sp"/>
+                <Button android:id="@+id/applyHackerBtn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:backgroundTint="#003300" android:text="Apply Hacker Matrix" android:textColor="#00FF00"/>
+            </LinearLayout>
+
+            <!-- Custom Photo App Icon -->
+            <LinearLayout style="@style/SettingsCard" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:text="🖼️ Custom Photo App Icon" android:textColor="#FF2D55" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Set your own gallery photo as any app icon" android:textColor="#AAAAAA" android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Icon Shape:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <RadioGroup
+                    android:id="@+id/iconShapeGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/shapeSquare"
+                        style="@style/SettingsChip"
+                        android:layout_marginEnd="12dp"
+                        android:text="Square 🔲"
+                        android:checked="true" />
+                    <RadioButton
+                        android:id="@+id/shapeCircle"
+                        style="@style/SettingsChip"
+                        android:text="Circle ⭕" />
+                </RadioGroup>
+
+                <Button android:id="@+id/setCustomPhotoIconBtn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:backgroundTint="#FF2D55" android:text="Set Custom Photo Icon" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Reset Default Icons -->
+            <LinearLayout style="@style/SettingsCard" android:orientation="vertical" android:padding="16dp" android:layout_marginTop="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" android:text="🔄 Reset Icons to Default" android:textColor="#FF3B30" android:textSize="18sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Clear custom colors and reset all app icons" android:textColor="#AAAAAA" android:textSize="13sp"/>
+                <Button android:id="@+id/resetIconsBtn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp" android:backgroundTint="#3A3A3C" android:text="Reset Default Icons" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
